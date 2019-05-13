@@ -1,0 +1,7 @@
+{
+  "name": "PeerCodeProject",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ 'Manage pets'}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let dog of ownedDogs">
+            <ion-avatar item-start>
+                <img [src]="dog.profilePic" />
+            </ion-avatar>
+            <h2>{{dog.name}}</h2>
+            <p>{{dog.dogBreed}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="addPet()" color="royal">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

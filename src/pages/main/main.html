@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar> <ion-title>Main</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="activity-wrapper">
+    <div class="progress-wrapper">
+      <div class="avatar-wrapper">
+        <img class="avatar" src="../../assets/img/bobby.jpg"/>
+      </div>
+      <div class="progress-bar-wrapper">
+        <round-progress
+          [(current)]="percentageGoal"
+          [max]="100"
+          [color]="'#15F86C'"
+          [background]="'#F5F5F5'"
+          [radius]="360"
+          [stroke]="35"
+          [semicircle]="false"
+          [rounded]="false"
+          [clockwise]="true"
+          [responsive]="true"
+          [duration]="1000"
+          [animation]="'easeInSine'"
+          [animationDelay]="0"
+        >
+        </round-progress>
+      </div>
+    </div>
+    <div class="stats-wrapper">
+      <p>
+        {{ dogName }} the {{ dogBreed }} <br />
+        {{ dogAge }} years old
+      </p>
+      <p>
+        Daily Goal <br />
+        <span> {{ currentMinutes }} </span> / <span> {{ goalMinutes }} </span>
+        <br />
+        You are {{ percentageGoal | number: "1.0-0" }}% there, keep going !
+      </p>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="controls-wrapper">
+    <div class="control-box">
+      <div class="control-box-image">
+        <img src="../../assets/icon/weight_icon.jpg" />
+      </div>
+      <div
+        class="control-box-content"
+        (click)="weightPrompt()"
+        style="cursor:pointer;"
+      >
+        <span>Current weight:</span> <br />
+        <span>{{ dogWeight }} KG</span> <br />
+        <span>Lost {{ dogWeightChange }} KG since start!</span>
+      </div>
+    </div>
+    <div class="control-box">
+      <div class="control-box-image">
+        <img src="../../assets/icon/measures_icon.jpg" />
+      </div>
+      <div
+        class="control-box-content"
+        (click)="dimensionsPrompt()"
+        style="cursor:pointer;"
+      >
+        <span>Current Height:</span> <br />
+        <span>{{ dogHeight }} CM</span> <br />
+        <span>Current Length:</span> <br />
+        <span>{{ dogLength }} CM</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

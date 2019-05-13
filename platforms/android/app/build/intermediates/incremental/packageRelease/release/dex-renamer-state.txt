@@ -1,0 +1,4 @@
+#Fri Jan 11 11:13:03 CET 2019
+base.0=E\:\\Programming\\smart-mobile-peercode\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex

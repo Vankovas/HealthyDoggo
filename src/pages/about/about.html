@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Personalize
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-content padding>
+  <div class="content">
+
+    <div class="weight"> 
+        <button ion-button color="light" icon-only class="upDownBtn">
+            <ion-icon name='arrow-down'></ion-icon>
+          </button>
+          
+          <ion-label class="weight-label">20</ion-label>
+          <ion-item>     
+            <ion-input type="text" value=""></ion-input>
+          </ion-item>
+          <button ion-button color="light" icon-only class="upDownBtn">
+            <ion-icon name='arrow-up'></ion-icon>
+          </button>
+    </div>
+
+    <div class="date">
+        <ion-item>
+            <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MM/DD/YYYY"></ion-datetime>
+        </ion-item>
+    </div>
+    <div class="buttons">
+        <button ion-button color="dark" clear>Cancel</button>
+        <button ion-button color="dark" clear>Save</button>
+    </div>
+  </div>
+</ion-content> -->
+
+
+<ion-content class="outer-content">
+
+  <ion-list>
+    <ion-list-header>Dog details</ion-list-header>
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Breed</ion-label>
+      
+      <ion-select [(ngModel)]="dogBreed" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn">
+        <ion-option *ngFor="let d of dogBreedData" [value]="d">{{d.text}}</ion-option>
+      </ion-select>
+      
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender" interface="popover">
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date of Birth</ion-label>
+      <ion-select (ionChange)="monthChange($event)">
+        <ion-option value="01">January</ion-option>
+        <ion-option value="02">February</ion-option>
+        <ion-option value="03" selected="true">March</ion-option>
+        <ion-option value="04">April</ion-option>
+        <ion-option value="05">May</ion-option>
+        <ion-option value="06">June</ion-option>
+        <ion-option value="07">July</ion-option>
+        <ion-option value="08">August</ion-option>
+        <ion-option value="09">September</ion-option>
+        <ion-option value="10">October</ion-option>
+        <ion-option value="11">November</ion-option>
+        <ion-option value="12">December</ion-option>
+      </ion-select>
+      <ion-select (ionChange)="yearChange($event)">
+        <ion-option>1999</ion-option>
+        <ion-option>2001</ion-option>
+        <ion-option>2002</ion-option>
+        <ion-option>2003</ion-option>
+        <ion-option>2004</ion-option>
+        <ion-option selected="true">2005</ion-option>
+        <ion-option>2006</ion-option>
+        <ion-option>2007</ion-option>
+        <ion-option>2008</ion-option>
+        <ion-option>2009</ion-option>
+        <ion-option>2010</ion-option>
+        <ion-option>2011</ion-option>
+        <ion-option>2012</ion-option>
+        <ion-option>2013</ion-option>
+        <ion-option>2014</ion-option>
+        <ion-option>2015</ion-option>
+        <ion-option>2016</ion-option>
+        <ion-option>2017</ion-option>
+        <ion-option>2018</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>Measurements of the dog</ion-list-header>
+
+    <ion-item>
+      <ion-label>Height (cm)</ion-label>
+      <ion-input type="number" [(ngModel)]="dogHeight"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Length (cm)</ion-label>
+      <ion-input type="number" [(ngModel)]="dogLength"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Weight (kg)</ion-label>
+      <ion-input type="number" [(ngModel)]="dogWeight"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

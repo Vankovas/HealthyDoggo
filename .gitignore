@@ -1,0 +1,13 @@
+PeerCodeProject/package-lock\.json
+.idea
+node_modules/
+
+www/
+
+.sourcemaps/
+
+package-lock\.json
+
+src/pages/modals/add-dog-modal/add-dog-modal\.html
+
+src/pages/modals/add-dog-modal/add-pet-modal\.html
